@@ -47,10 +47,45 @@ let counter = [];
 cards.forEach(function(element) {
     element.addEventListener("click", function show() {
         if (counter.length < 2) {
-            element.classList.add("open");
-            element.classList.add("show");
-            counter.push(element);
-            console.log(counter);
+            if (counter.length == 0) {
+                element.classList.add("open");
+                element.classList.add("show");
+                counter.push(element);
+                console.log(counter);
+            }
+            else {
+                element.classList.add("open");
+                element.classList.add("show");
+                counter.push(element);
+                console.log(counter);
+                const childFirst = counter[0].children;
+                const childSecond = counter[1].children;
+                console.log(childFirst);
+                console.log(childSecond);
+                if (childFirst[0].className == childSecond[0].className) {
+                    //match
+                    console.log("match");
+                    console.log(childFirst[0].className);
+                    console.log(childSecond[0].className);
+                    counter =[];
+                }
+                else {
+                    //not match
+                    //close them in 2 seconds
+                    //nullify counter
+                    setTimeout(function(){
+                        counter.forEach(function(flipped) {
+                        flipped.classList.remove("open");
+                        flipped.classList.remove("show");
+                        });
+                        counter =[];
+                    }, 1000);
+
+
+
+                }
+            }
+
             }
     });
 });
