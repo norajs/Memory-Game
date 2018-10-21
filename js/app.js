@@ -40,12 +40,18 @@ function shuffle(array) {
 
 // Select all cards and store in an array
 const cards = document.querySelectorAll('.card');
+// Array that gets the flipped card added into it in order to keep track of number of flipped cards with counter.length
+let counter = [];
+
 // Watch for clicks on every card
 cards.forEach(function(element) {
     element.addEventListener("click", function show() {
-    element.classList.add("open");
-    element.classList.add("show");
-    console.log(element.classList);
+        if (counter.length < 2) {
+            element.classList.add("open");
+            element.classList.add("show");
+            counter.push(element);
+            console.log(counter);
+            }
     });
 });
 
