@@ -53,6 +53,20 @@ cards.forEach(function(element) {
         console.log(document.getElementById("moves").innerHTML);
         document.getElementById("moves").innerHTML = clickCounter;
         console.log(document.getElementById("moves").innerHTML);
+        //Verify number of clicks for star rating changes
+        if (clickCounter == 20) {
+            document.getElementById("thirdStar").classList.remove("fa-star");
+            document.getElementById("thirdStar").classList.add("fa-star-o");
+        }
+        if (clickCounter == 26) {
+            document.getElementById("secondStar").classList.remove("fa-star");
+            document.getElementById("secondStar").classList.add("fa-star-o");
+        }
+        if (clickCounter == 35) {
+            document.getElementById("firstStar").classList.remove("fa-star");
+            document.getElementById("firstStar").classList.add("fa-star-o");
+        }
+        //Flip max 2 cards at a time
         if (counter.length < 2) {
             if (counter.length == 0) {
                 element.classList.add("open");
@@ -87,12 +101,8 @@ cards.forEach(function(element) {
                         });
                         counter =[];
                     }, 1000);
-
-
-
                 }
             }
-
             }
     });
 });
