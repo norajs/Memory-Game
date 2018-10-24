@@ -44,6 +44,25 @@ const cards = document.querySelectorAll('.card');
 let counter = [];
 //Number of clicks counter
 let clickCounter = 0;
+//Seconds and minutes for timer
+let seconds = 0;
+let minutes = 0;
+
+//Add 1 second
+setInterval(function(){
+    if (seconds < 59)
+        {
+            seconds += 1;
+        }
+    else
+        {
+            seconds = 0;
+            minutes += 1;
+        }
+    console.log(seconds);
+    document.getElementById("time").innerHTML= minutes + ":" + seconds;
+}, 1000);
+
 
 // Watch for clicks on every card
 cards.forEach(function(element) {
