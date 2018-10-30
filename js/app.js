@@ -48,7 +48,7 @@ let clickCounter = 0;
 let seconds = 0;
 let minutes = 0;
 
-//Add 1 second
+//Timer
 setInterval(function(){
     if (seconds < 59)
         {
@@ -119,7 +119,7 @@ cards.forEach(function(element) {
                         flipped.classList.remove("show");
                         });
                         counter =[];
-                    }, 1000);
+                    }, 500);
                 }
             }
             }
