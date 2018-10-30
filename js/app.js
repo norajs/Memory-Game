@@ -48,6 +48,9 @@ let clickCounter = 0;
 let seconds = 0;
 let minutes = 0;
 
+//Counter variable
+let classCounter = 0;
+
 //Timer
 setInterval(function(){
     if (seconds < 59)
@@ -59,7 +62,7 @@ setInterval(function(){
             seconds = 0;
             minutes += 1;
         }
-    console.log(seconds);
+
     document.getElementById("time").innerHTML= minutes + ":" + seconds;
 }, 1000);
 
@@ -90,12 +93,14 @@ cards.forEach(function(element) {
             if (counter.length == 0) {
                 element.classList.add("open");
                 element.classList.add("show");
+                classCounter += 1;
                 counter.push(element);
                 console.log(counter);
             }
             else {
                 element.classList.add("open");
                 element.classList.add("show");
+                classCounter += 1;
                 counter.push(element);
                 console.log(counter);
                 const childFirst = counter[0].children;
@@ -117,12 +122,18 @@ cards.forEach(function(element) {
                         counter.forEach(function(flipped) {
                         flipped.classList.remove("open");
                         flipped.classList.remove("show");
+                        classCounter -= 1;
                         });
                         counter =[];
                     }, 500);
                 }
             }
             }
+        if (classCounter == 16) {
+            console.log("GAME OVER");
+        };
+
+
     });
 });
 
