@@ -22,7 +22,7 @@
         		<i class="fa fa-repeat"></i>
         	</div>
 
-            <ul class="stars">
+            <ul id="starRating" class="stars">
         		<li><i id="firstStar" class="fa fa-star"></i></li>
         		<li><i id="secondStar" class="fa fa-star"></i></li>
         		<li><i id="thirdStar" class="fa fa-star"></i></li>
@@ -87,11 +87,14 @@
         </ul>
 
         <!-- Modal -->
-        <div id="myModal" class="modal">
+        <div id="myModal" class="modal" style="display:none;">
 
             <!-- Modal content -->
             <div class="modalContent">
-                <p>Text</p>
+                <p id="modalText"><i id="firstStar" class="fa fa-star"></i><i id="secondStar" class="fa fa-star"></i><i id="thirdStar" class="fa fa-star"></i></p>
+
+
+
             </div>
         </div>
 

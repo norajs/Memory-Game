@@ -47,12 +47,13 @@ let clickCounter = 0;
 //Seconds and minutes for timer
 let seconds = 0;
 let minutes = 0;
+let timerId = 0;
 
 //Counter variable
 let classCounter = 0;
 
 //Timer
-setInterval(function(){
+timerId = setInterval(function(){
     if (seconds < 59)
         {
             seconds += 1;
@@ -131,7 +132,12 @@ cards.forEach(function(element) {
             }
         if (classCounter == 16) {
             console.log("GAME OVER");
+            const finalMinutes = minutes;
+            const finalSeconds = seconds;
+            clearInterval(timerId);
+            document.getElementById("time").innerHTML= finalMinutes + ":" + finalSeconds;
             document.getElementById("myModal").style.display = "block";
+            document.getElementById("modalText").innerHTML= "Congratulations! You finished the game in " + clickCounter + " moves and it took you " + finalMinutes + " minutes and " + finalSeconds + " seconds. " + "Your star rating is  " + document.getElementById("modalText").innerHTML;
         };
 
 
