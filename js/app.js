@@ -131,6 +131,7 @@ cards.forEach(function(element) {
             }
         if (classCounter == 16) {
             console.log("GAME OVER");
+            document.getElementById("myModal").style.display = "block";
         };
 
 
